@@ -3,9 +3,15 @@ bin/
 obj/
 artifacts/
 publish/
+out-package/
+out-selfcontained/
 *.user
 *.suo
 .vs/
+
+# Release archives (published as GitHub Release assets, not committed)
+*.zip
+SHA256SUMS.txt
 
 # Test / temporary files
 *.tmp
