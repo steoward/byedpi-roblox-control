@@ -9,11 +9,11 @@
 
 ## الملفات المرفقة
 
-| الملف | الوصف | الحجم |
-| --- | --- | --- |
-| `ByeDPI-Control-1.0.0-win-x64.zip` | **النسخة الموصى بها** — التطبيق + كل سكربتات التثبيت + التوثيق. تحتاج [.NET Desktop Runtime 9](https://dotnet.microsoft.com/download/dotnet/9.0). | ~109 KB |
-| `ByeDPIControl-1.0.0-win-x64-selfcontained.zip` | التطبيق فقط في ملف واحد مستقل، لا يحتاج تثبيت .NET إطلاقًا. | ~42 MB |
-| `SHA256SUMS.txt` | بصمات SHA-256 للتحقق من سلامة الملفات. | — |
+| الملف | الوصف |
+| --- | --- |
+| `ByeDPI-Control-1.0.0-win-x64.zip` | **النسخة الموصى بها** — التطبيق + كل سكربتات التثبيت + التوثيق. تحتاج [.NET Desktop Runtime 9](https://dotnet.microsoft.com/download/dotnet/9.0). |
+| `ByeDPIControl-1.0.0-win-x64-selfcontained.zip` | التطبيق فقط في ملف واحد مستقل، لا يحتاج تثبيت .NET إطلاقًا. |
+| `SHA256SUMS.txt` | بصمات SHA-256 للتحقق من سلامة الملفات. |
 
 ---
 
