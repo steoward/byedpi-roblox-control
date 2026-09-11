@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write   # required to attach assets to a GitHub Release on tag pushes
 
 jobs:
   build:
@@ -80,7 +80,9 @@ jobs:
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
         with:
+          # Notes are maintained by hand in RELEASE_NOTES.md, so do not let the
+          # action regenerate (and overwrite) them.
+          generate_release_notes: false
           files: |
             *.zip
             SHA256SUMS.txt
-          generate_release_notes: true
