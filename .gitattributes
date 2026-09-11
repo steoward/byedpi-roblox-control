@@ -1,0 +1,17 @@
+# Normalize line endings
+* text=auto eol=crlf
+
+# Source code
+*.cs        text diff=csharp
+*.csproj    text
+*.ps1       text
+*.yml       text
+*.md        text
+*.json      text
+
+# Binary files
+*.exe       binary
+*.ico       binary
+*.png       binary
+*.zip       binary
+*.dll       binary

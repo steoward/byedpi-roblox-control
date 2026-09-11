@@ -1,0 +1,92 @@
+مركز تحكم Roblox — ByeDPI + ProxiFyre
+=====================================
+
+تطبيق عربي بسيط لإدارة خدمتي ByeDPI وProxiFyre لتشغيل Roblox.
+البروكسي محلي فقط: 127.0.0.1:1080 — والتوجيه مخصص لـ Roblox فقط.
+بقية برامجك لا تمر عبر البروكسي.
+
+
+التنزيل
+-------
+من صفحة الإصدارات: https://github.com/steoward/byedpi-roblox-control/releases/latest
+
+نزّل الملف: ByeDPI-Control-1.0.0-win-x64.zip
+ثم فك الضغط في أي مجلد، مثلًا: C:\Tools\ByeDPI Control
+
+
+التثبيت (خطوة بخطوة)
+--------------------
+كل الأوامر تُنفَّذ في PowerShell «كمسؤول»
+(زر الفأرة الأيمن على PowerShell ← تشغيل كمسؤول).
+
+1) السماح بتشغيل السكربتات (مرة واحدة في هذه النافذة):
+
+   Set-ExecutionPolicy -Scope Process -ExecutionPolicy Bypass
+
+2) تنزيل الأدوات المطلوبة (ciadpi.exe وProxiFyre):
+
+   .\scripts\Get-Dependencies.ps1
+
+3) تثبيت الخدمتين وضبطهما:
+
+   .\scripts\Install-RobloxServices.ps1
+
+4) ضبط الجدار الناري:
+
+   .\scripts\Configure-Firewall.ps1
+
+5) إنشاء اختصار «تحكم Roblox» على سطح المكتب (اختياري):
+
+   .\scripts\New-DesktopShortcut.ps1
+
+ثم شغّل ByeDPIControl.exe أو الاختصار.
+
+
+الأزرار
+-------
+- تشغيل الكل: يشغّل ByeDPI وProxiFyre.
+- إيقاف الكل: يوقف الخدمتين.
+- إعادة التشغيل: يعيد تشغيلهما لعلاج مشاكل الاتصال.
+- تشغيل Roblox: يفتح اللعبة مباشرة.
+- فتح السجلات: يفتح مجلد تشخيص ProxiFyre.
+- تحديث: يحدّث الحالة فورًا.
+
+سيطلب ويندوز صلاحية المسؤول فقط عند تشغيل الخدمات أو إيقافها أو إعادة تشغيلها.
+
+
+البناء من الكود المصدري
+-----------------------
+   git clone https://github.com/steoward/byedpi-roblox-control.git
+   cd byedpi-roblox-control
+   .\scripts\Build.ps1
+
+أو مباشرة:
+
+   dotnet publish .\Source\ByeDPIControl.csproj -c Release -r win-x64 --self-contained false -p:PublishSingleFile=true
+
+يتطلب .NET SDK 9.0 أو أحدث.
+
+
+إلغاء التثبيت
+-------------
+   .\scripts\Uninstall-RobloxServices.ps1
+
+لحذف ملفات الإعداد المُنشأة أيضًا:
+
+   .\scripts\Uninstall-RobloxServices.ps1 -RemoveConfig
+
+
+المتطلبات
+---------
+- ويندوز 10 أو 11 (x64)
+- صلاحية مسؤول لتثبيت وتشغيل الخدمات
+- .NET Desktop Runtime 9 (غير مطلوب في النسخة المستقلة)
+
+الأدوات الخارجية لا تُضمَّن في المستودع:
+- ByeDPI:    https://github.com/hufrea/byedpi
+- ProxiFyre: https://github.com/wiresock/proxifyre
+
+
+الترخيص
+-------
+كود هذا المستودع تحت رخصة MIT — راجع ملف LICENSE.

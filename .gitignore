@@ -1,0 +1,19 @@
+# Build output
+bin/
+obj/
+artifacts/
+publish/
+*.user
+*.suo
+.vs/
+
+# Test / temporary files
+*.tmp
+*.log
+install-result.json
+firewall-result.json
+
+# OS junk
+Thumbs.db
+desktop.ini
+.DS_Store
